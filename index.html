@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stichting Team Thomas — Samen voor Thomas</title>
-  <meta name="description" content="Stichting Team Thomas strijdt voor toegang tot medicatie voor Thomas, een vrolijk jongetje van 4 met achondroplasie. Help mee en doneer!">
+  <meta name="description" content="Stichting Team Thomas strijdt voor toegang tot medicatie voor Thomas, een vrolijk jongetje met achondroplasie. Help mee en doneer!">
   <meta property="og:title" content="Stichting Team Thomas">
   <meta property="og:description" content="Help Thomas groeien — samen strijden we voor toegang tot zijn medicijn.">
   <meta property="og:image" content="assets/logo.png">
@@ -23,7 +23,7 @@
       <img src="assets/logo.png" alt="Logo Stichting Team Thomas" class="hero-logo">
       <h1>Samen voor <span class="accent">Thomas</span></h1>
       <p class="hero-sub">
-        Thomas is een vrolijk jongetje van 4 jaar met achondroplasie.
+        Thomas is een vrolijk jongetje van <span class="thomas-age">4</span> jaar met achondroplasie.
         Wij strijden ervoor dat hij toegang krijgt tot het medicijn dat zijn leven kan veranderen.
       </p>
       <div class="hero-actions">
@@ -53,7 +53,7 @@
         </figure>
         <div class="story">
           <p>
-            Thomas is een stoere, vrolijke jongen van 4 jaar oud. Hij is geboren met
+            Thomas is een stoere, vrolijke jongen van <span class="thomas-age">4</span> jaar oud. Hij is geboren met
             <strong>achondroplasie</strong> — in de volksmond beter bekend als &ldquo;dwerggroei&rdquo;.
             Zonder behandeling zal Thomas een maximale lengte van ongeveer
             <strong>1,31 meter</strong> bereiken.
@@ -75,7 +75,7 @@
         <div class="fact-cards">
           <div class="fact-card">
             <span class="fact-emoji">🦸</span>
-            <h3>4 jaar oud</h3>
+            <h3><span class="thomas-age">4</span> jaar oud</h3>
             <p>Een echte superheld in de dop</p>
           </div>
           <div class="fact-card">
@@ -197,6 +197,16 @@
   <a href="#doneren" class="sticky-donate" id="stickyDonate">❤️ Doneer</a>
 
   <script>
+    // Leeftijd van Thomas dynamisch berekenen (geboortedatum: 7 februari 2022)
+    const BIRTH_DATE = new Date(2022, 1, 7); // maand is 0-gebaseerd: 1 = februari
+    const now = new Date();
+    let age = now.getFullYear() - BIRTH_DATE.getFullYear();
+    if (now.getMonth() < BIRTH_DATE.getMonth() ||
+        (now.getMonth() === BIRTH_DATE.getMonth() && now.getDate() < BIRTH_DATE.getDate())) {
+      age--;
+    }
+    document.querySelectorAll('.thomas-age').forEach(el => { el.textContent = age; });
+
     // Verberg de sticky knop wanneer de doneer-sectie in beeld is
     const sticky = document.getElementById('stickyDonate');
     const donateSection = document.getElementById('doneren');
