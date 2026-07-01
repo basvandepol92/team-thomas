@@ -431,36 +431,51 @@ h3,
 
 .brand-link {
   display: block;
-  width: clamp(165px, 19vw, 250px);
+  width: clamp(230px, 24vw, 320px);
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 18px;
   background: var(--white);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
 }
 
 .brand-link img {
   width: 100%;
-  aspect-ratio: 3.1 / 1;
+  aspect-ratio: 2.65 / 1;
   object-fit: cover;
-  object-position: 50% 58%;
+  object-position: 50% 50%;
 }
 
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: clamp(0.75rem, 3vw, 2rem);
-  color: rgba(255, 255, 255, 0.76);
-  font-weight: 700;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 800;
   font-size: 0.95rem;
 }
 
-.nav-links a,
+.nav-links a {
+  color: inherit;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.32);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.nav-links a:visited {
+  color: inherit;
+}
+
 .nav-donate {
   text-decoration: none;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
   color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
 }
 
 .nav-donate {
@@ -928,10 +943,10 @@ h3,
 }
 
 .footer-logo {
-  width: 190px;
-  aspect-ratio: 3.1 / 1;
+  width: 220px;
+  aspect-ratio: 2.65 / 1;
   object-fit: cover;
-  object-position: 50% 58%;
+  object-position: 50% 50%;
   border-radius: 12px;
   background: var(--white);
   opacity: 1;
@@ -1006,8 +1021,8 @@ h3,
   }
 
   .brand-link {
-    width: 150px;
-    border-radius: 10px;
+    width: 185px;
+    border-radius: 14px;
   }
 
   .nav-donate {
