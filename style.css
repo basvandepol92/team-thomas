@@ -1165,6 +1165,18 @@ h3,
   color: #45596d;
 }
 
+.info-card a {
+  position: relative;
+  z-index: 1;
+  color: var(--blue);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.info-card a:hover {
+  text-decoration: underline;
+}
+
 .info-card p:last-child,
 .trust-card p:last-child {
   margin-bottom: 0;
