@@ -1034,6 +1034,7 @@ h3,
   .hero-inner.hero-grid {
     width: min(100% - 1.25rem, 1120px);
     padding-top: 2.3rem;
+    gap: 2rem;
   }
 
   .hero-copy h1 {
@@ -1042,6 +1043,7 @@ h3,
 
   .hero-actions {
     display: grid;
+    max-width: 18rem;
   }
 
   .hero-actions .btn,
@@ -1051,20 +1053,25 @@ h3,
   }
 
   .hero-visual {
-    min-height: 24rem;
+    min-height: auto;
+    padding: 1rem 0 0;
   }
 
   .portrait-card {
-    left: 50%;
+    position: relative;
+    left: auto;
     right: auto;
-    width: min(19rem, 88vw);
-    transform: translateX(-50%) rotate(1.5deg);
+    bottom: auto;
+    width: min(21rem, calc(100vw - 2.4rem));
+    margin: 0 auto;
+    transform: rotate(1.5deg);
   }
 
   .halo {
+    top: 1rem;
     left: 50%;
     right: auto;
-    width: min(23rem, 88vw);
+    width: min(23rem, calc(100vw - 1.5rem));
     transform: translateX(-50%);
   }
 
